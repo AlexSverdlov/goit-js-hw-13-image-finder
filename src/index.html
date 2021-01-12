@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Фотогалерея</h1>
+    </header>
+    <main>
+      <form class="form">
+        <label>
+          Введите ваш запрос
+          <input
+            type="text"
+            name="query"
+            id="query"
+            placeholder="Введите ваш запрос"
+          />
+        </label>
+        <button class="searchBtn" type="submit">Поиск</button>
+      </form>
+      <article>
+        <ul class="gallery"></ul>
+        <button class="loadmore isHiden">Load more</button>
+      </article>
+    </main>
+  </body>
+</html>
