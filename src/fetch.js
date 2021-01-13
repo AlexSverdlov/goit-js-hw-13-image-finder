@@ -1,9 +1,10 @@
 import refs from './refs.js';
 import template from './temlates/item.hbs';
+
 export default {
   query: '',
   page: 1,
-  perPage: 3,
+  perPage: 12,
   baseUrl: `https://pixabay.com/api/`,
 
   get queryValue() {
@@ -26,9 +27,17 @@ export default {
       })
       .then(data => {
         const items = template(data);
+        // Координаты кнопки до вставки новых изображений
+        const koordBtn = document.querySelector('.loadmore').offsetTop;
         place.insertAdjacentHTML('beforeend', items);
-        // return place;
-        // console.log(items);
+        if (this.page > 1) {
+          setTimeout(() => {
+            window.scrollTo({
+              top: koordBtn,
+              behavior: 'smooth',
+            });
+          }, 500);
+        }
       });
   },
   setPage() {
